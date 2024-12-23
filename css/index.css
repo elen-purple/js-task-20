@@ -1,20 +1,31 @@
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
 .gallery {
   display: flex;
-  overflow-x: auto;
+  overflow: visible;
   list-style-type: none;
   padding: 0;
   gap: 20px;
+  transition: all 0.3s;
+}
+
+.gallery li {
+  min-width: 400px;
 }
 
 .image {
-  width: 300px;
-  height: 200px;
+  width: 400px;
+  height: 300px;
   object-fit: cover;
   cursor: pointer;
 }
 
 .full-image-container {
-  display: none;
+  transition: all 0.3s;
   position: fixed;
   top: 0;
   left: 0;
@@ -25,7 +36,9 @@
 }
 
 .full-image {
-  max-width: 90%;
+  display: flex;
+  align-items: center;
+  max-width: 400px;
   max-height: 90%;
   margin: auto;
   position: absolute;
@@ -35,8 +48,14 @@
   right: 0;
 }
 
+button[data-action="close"] {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+}
+
 #boxes {
   display: flex;
+  flex-direction: column;
   gap: 20px;
-  flex-wrap: wrap;
 }

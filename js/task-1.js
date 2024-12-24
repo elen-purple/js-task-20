@@ -6,7 +6,11 @@ gallery.style.marginLeft = 0;
 window.addEventListener("keydown", (e) => {
   if (
     e.code === "ArrowRight" &&
-    Number.parseInt(gallery.style.marginLeft) !== -2100
+    Number.parseInt(gallery.style.marginLeft) !==
+      -(
+        (gallery.children.length - 1) *
+        (gallery.firstElementChild.offsetWidth + 20)
+      )
   ) {
     gallery.style.marginLeft = `${
       Number.parseInt(gallery.style.marginLeft) -
